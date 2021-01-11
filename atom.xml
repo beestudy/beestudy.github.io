@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-11-24T04:50:12.767Z</updated>
+  <updated>2021-01-11T11:35:04.747Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>set -u用法</title>
+    <link href="http://example.com/2021/01/11/shell1/"/>
+    <id>http://example.com/2021/01/11/shell1/</id>
+    <published>2021-01-11T11:34:00.000Z</published>
+    <updated>2021-01-11T11:35:04.747Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>脚本场景：业务逻辑判断 赋值的 LOG_PATH=/xxx/yyy 漏了一种没有赋值</strong><br>此时rm -rf ${LOG_PATH}/*  等价于 rm -rf /*<br>避免方法1.每次删除之前，都判断${LOG_PATH}目录是否存在<br>2.set -u参数  在脚本的 第一行#!/bin/bash ,在第二行写</p><h2 id="set-u-用法"><a href="#set-u-用法" class="headerlink" title="set -u 用法"></a>set -u 用法</h2><p>BASH 脚本的 set 命令有很多参数，在实际应用中有些写错的内容，反而被脚本忽略了。set -u 就可以让脚本遇到错误时停止执行，并指出错误的行数信息。本文主要介绍 set -u （set -o nounset）命令的相关用法。<br>执行脚本的时候，如果遇到不存在的变量，Bash 默认忽略它。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env bash</span><br><span class="line"></span><br><span class="line">echo $a</span><br><span class="line">echo bar</span><br></pre></td></tr></table></figure><p>上面代码中，$a是一个不存在的变量。执行结果如下。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ bash script.sh</span><br><span class="line"></span><br><span class="line">bar</span><br></pre></td></tr></table></figure><p>可以看到，echo $a输出了一个空行，Bash 忽略了不存在的$a，然后继续执行echo bar。大多数情况下，这不是开发者想要的行为，遇到变量不存在，脚本应该报错，而不是一声不响地往下执行。</p><p>set -u就用来改变这种行为。脚本在头部加上它，遇到不存在的变量就会报错，并停止执行。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;env bash</span><br><span class="line">set -u</span><br><span class="line"></span><br><span class="line">echo $a</span><br><span class="line">echo bar</span><br></pre></td></tr></table></figure><p>运行结果如下。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ bash script.sh</span><br><span class="line">bash: script.sh:行4: a: 未绑定的变量</span><br></pre></td></tr></table></figure><p>可以看到，脚本报错了，并且不再执行后面的语句。</p><p>-u还有另一种写法-o nounset，两者是等价的。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set -o nounset</span><br></pre></td></tr></table></figure><p>以上就是 shell 脚本 set -u 的作用。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;脚本场景：业务逻辑判断 赋值的 LOG_PATH=/xxx/yyy 漏了一种没有赋值&lt;/strong&gt;&lt;br&gt;此时rm -rf ${LOG_PATH}/*  等价于 rm -rf /*&lt;br&gt;避免方法1.每次删除之前，都判断${LOG_PATH}目录是否存在</summary>
+      
+    
+    
+    
+    
+    <category term="shell" scheme="http://example.com/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>linux练习题目</title>
