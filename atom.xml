@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-20T08:31:17.589Z</updated>
+  <updated>2021-01-20T10:56:24.674Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql基础知识</title>
+    <link href="http://example.com/2021/01/20/mysql2/"/>
+    <id>http://example.com/2021/01/20/mysql2/</id>
+    <published>2021-01-20T10:55:00.000Z</published>
+    <updated>2021-01-20T10:56:24.674Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="连接Mysql"><a href="#连接Mysql" class="headerlink" title="连接Mysql"></a>连接Mysql</h2><p>格式 mysql -h主机地址 -u用户名 -p用户密码</p><h3 id="连接本机上的mysql"><a href="#连接本机上的mysql" class="headerlink" title="连接本机上的mysql"></a>连接本机上的mysql</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> mysql -uroot -p</span></span><br></pre></td></tr></table></figure><h3 id="连接到远程主机上的mysql"><a href="#连接到远程主机上的mysql" class="headerlink" title="连接到远程主机上的mysql"></a>连接到远程主机上的mysql</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> mysql -h110.110.110.110 -urrot -p</span></span><br></pre></td></tr></table></figure><p>连接远程主机ip为110.110.110.110的数据库</p><h3 id="退出mysql"><a href="#退出mysql" class="headerlink" title="退出mysql"></a>退出mysql</h3><p>命令：exit （回车）</p><h2 id="mysql常用命令"><a href="#mysql常用命令" class="headerlink" title="mysql常用命令"></a>mysql常用命令</h2><h3 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h3><p>create database ruozedata;  #新建数据库<br>grant all privileges on ruozedata.* to jepson@’%’ identified by ‘ruozedata’; #赋予权限<br>flush privileges;  #刷新权限<br><strong>对于mysql的用户操作，比如权限相关的 ，最后一步必须执行刷新权限。</strong><br> %代表了 任意的客户端的IP地址 都被允许使用jepson用户来远程访问<br> grant all privileges on ruozedata.* to jepson@’16.2.3.%’ identified by ‘ruozedata’;<br> 16.2.3这个网段的所有ip都允许有权限去访问，包括16.2.3.1和16.2.3.2等等</p><h3 id="显示数据库"><a href="#显示数据库" class="headerlink" title="显示数据库"></a>显示数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure><h3 id="选择mysql数据库"><a href="#选择mysql数据库" class="headerlink" title="选择mysql数据库"></a>选择mysql数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br></pre></td></tr></table></figure><h3 id="显示表"><a href="#显示表" class="headerlink" title="显示表"></a>显示表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure><h3 id="查看表结构"><a href="#查看表结构" class="headerlink" title="查看表结构"></a>查看表结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc db;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create table DB;</span><br></pre></td></tr></table></figure><h3 id="显示用户正在运行的线程"><a href="#显示用户正在运行的线程" class="headerlink" title="显示用户正在运行的线程"></a>显示用户正在运行的线程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show processlist;</span><br></pre></td></tr></table></figure><h3 id="杀会话"><a href="#杀会话" class="headerlink" title="杀会话"></a>杀会话</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill 7;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;连接Mysql&quot;&gt;&lt;a href=&quot;#连接Mysql&quot; class=&quot;headerlink&quot; title=&quot;连接Mysql&quot;&gt;&lt;/a&gt;连接Mysql&lt;/h2&gt;&lt;p&gt;格式 mysql -h主机地址 -u用户名 -p用户密码&lt;/p&gt;
+&lt;h3 id=&quot;连接本机上的mys</summary>
+      
+    
+    
+    
+    
+    <category term="mysql" scheme="http://example.com/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>mysql的安装</title>
