@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-11T11:35:04.747Z</updated>
+  <updated>2021-01-20T04:06:32.844Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JDK的安装</title>
+    <link href="http://example.com/2021/01/20/jdk1/"/>
+    <id>http://example.com/2021/01/20/jdk1/</id>
+    <published>2021-01-20T04:05:00.000Z</published>
+    <updated>2021-01-20T04:06:32.844Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>jdk文件必须要放到/usr/java目录下，如果没有该目录，先进行创建</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> mkdir -p /usr/java</span></span><br></pre></td></tr></table></figure><p><strong>将jdk解压到/usr/java目录中</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">tar -xzvf jdk-8u181-linux-x64.tar.gz -C /usr/java/</span></span><br></pre></td></tr></table></figure><p><strong>给jdk赋予权限</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">cd</span> /usr/java</span></span><br><span class="line"><span class="meta">#</span><span class="bash">chown -R root:root jdk1.8.0_181</span></span><br></pre></td></tr></table></figure><p><strong>配置环境变量</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">ruozedata env</span></span><br><span class="line">export JAVA_HOME=/usr/java/jdk1.8.0_181</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br></pre></td></tr></table></figure><p><strong>生效环境变量</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">source</span> /etc/profile</span></span><br></pre></td></tr></table></figure><p><strong>查看是否成功</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> java -version</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;jdk文件必须要放到/usr/java目录下，如果没有该目录，先进行创建&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=</summary>
+      
+    
+    
+    
+    
+    <category term="jdk" scheme="http://example.com/tags/jdk/"/>
+    
+  </entry>
   
   <entry>
     <title>set -u用法</title>
