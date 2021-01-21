@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-21T05:31:03.273Z</updated>
+  <updated>2021-01-21T05:57:21.010Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装dberver</title>
+    <link href="http://example.com/2021/01/21/dbeaver/"/>
+    <id>http://example.com/2021/01/21/dbeaver/</id>
+    <published>2021-01-21T05:56:00.000Z</published>
+    <updated>2021-01-21T05:57:21.010Z</updated>
+    
+    <content type="html"><![CDATA[<p>安装dbeaver需要先需要安装jdk工具 jdk-8u171-windows-x64.exe<br>jdk版本可自行选择</p><h2 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h2><p><img src="/img/dbeaver/1.jpg" alt="avatar"><br><img src="/img/dbeaver/2.jpg" alt="avatar"></p><h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><ol><li><p>打开环境变量配置。计算机→属性→高级系统设置→高级→环境变量，在系统变量中配置。</p></li><li><p>配置JAVA_HOME。新建，变量名JAVA_HOME，变量值，jdk路径，我的路径是D:\jdk1.8.0_171，保存。<br><img src="/img/dbeaver/3.jpg" alt="avatar"></p></li><li><p>配置CLASSPATH。新建，变量名CLASSPATH，变量值，.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar（第一个分号前前面有一个点）。<br><img src="/img/dbeaver/4.jpg" alt="avatar"></p></li><li><p>配置Path。打开Path变量，在变量值最前加入%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;<br><img src="/img/dbeaver/5.jpg" alt="avatar"></p><h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>运行cmd，输入java -version，显示java版本则成功。</p><h2 id="安装DBdaver"><a href="#安装DBdaver" class="headerlink" title="安装DBdaver"></a>安装DBdaver</h2><p>DBeaver官网  <a href="https://dbeaver.jkiss.org/download/">https://dbeaver.jkiss.org/download/</a><br><img src="/img/dbeaver/6.jpg" alt="avatar"></p><h2 id="下载DBdaver"><a href="#下载DBdaver" class="headerlink" title="下载DBdaver"></a>下载DBdaver</h2><p><img src="/img/dbeaver/7.jpg" alt="avatar"></p><h2 id="解压后打开目录文件夹如下"><a href="#解压后打开目录文件夹如下" class="headerlink" title="解压后打开目录文件夹如下"></a>解压后打开目录文件夹如下</h2><p><img src="/img/dbeaver/8.jpg" alt="avatar"><br>创建dbeaver快捷方式，快捷方式上右键 -&gt;  属性 -&gt;  快捷方式 -&gt;  目标，编辑如下</p></li></ol><p>-vm D:\jdk1.8.0_171\bin\javaw.exe<br> <img src="/img/dbeaver/9.jpg" alt="avatar"></p><h2 id="启动后登录测试"><a href="#启动后登录测试" class="headerlink" title="启动后登录测试"></a>启动后登录测试</h2><p>选择mysql数据库，填写 ip地址，端口号，数据库，用户名，密码，点击测试，会提示，下载驱动<br> <img src="/img/dbeaver/10.jpg" alt="avatar"></p><h2 id="登录后报错"><a href="#登录后报错" class="headerlink" title="登录后报错"></a>登录后报错</h2><p> <img src="/img/dbeaver/11.jpg" alt="avatar"></p><h2 id="修改权限，使任何机器都可以访问"><a href="#修改权限，使任何机器都可以访问" class="headerlink" title="修改权限，使任何机器都可以访问"></a>修改权限，使任何机器都可以访问</h2><p>mysql&gt; update mysql.user set Host=’%’ where Host=’hadoop-01’;</p><p>Query OK, 1 row affected (0.00 sec)<br>Rows matched: 1  Changed: 1  Warnings: 0</p><p>mysql&gt; flush privileges;<br>Query OK, 0 rows affected (0.00 sec)<br> <img src="/img/dbeaver/12.jpg" alt="avatar"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;安装dbeaver需要先需要安装jdk工具 jdk-8u171-windows-x64.exe&lt;br&gt;jdk版本可自行选择&lt;/p&gt;
+&lt;h2 id=&quot;安装jdk&quot;&gt;&lt;a href=&quot;#安装jdk&quot; class=&quot;headerlink&quot; title=&quot;安装jdk&quot;&gt;&lt;/a&gt;安装</summary>
+      
+    
+    
+    
+    
+    <category term="dberver" scheme="http://example.com/tags/dberver/"/>
+    
+  </entry>
   
   <entry>
     <title>datetime和timestamp区别</title>
@@ -36,19 +59,6 @@
     
     
     <category term="mysql" scheme="http://example.com/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://example.com/2021/01/21/dbeaver/"/>
-    <id>http://example.com/2021/01/21/dbeaver/</id>
-    <published>2021-01-21T03:27:32.858Z</published>
-    <updated>2021-01-21T03:27:32.858Z</updated>
-    
-    
-    
-    
     
   </entry>
   
