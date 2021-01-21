@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-20T10:56:24.674Z</updated>
+  <updated>2021-01-21T03:27:32.858Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/01/21/dbeaver/"/>
+    <id>http://example.com/2021/01/21/dbeaver/</id>
+    <published>2021-01-21T03:27:32.858Z</published>
+    <updated>2021-01-21T03:27:32.858Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>mysql基础知识</title>
@@ -109,8 +122,8 @@
   
   <entry>
     <title>linux练习题目</title>
-    <link href="http://example.com/2020/11/24/studytwo/"/>
-    <id>http://example.com/2020/11/24/studytwo/</id>
+    <link href="http://example.com/2020/11/24/linuxtwo/"/>
+    <id>http://example.com/2020/11/24/linuxtwo/</id>
     <published>2020-11-24T03:34:00.000Z</published>
     <updated>2021-01-19T05:50:50.903Z</updated>
     
@@ -131,8 +144,8 @@
   
   <entry>
     <title>linux命令</title>
-    <link href="http://example.com/2020/11/22/studyone/"/>
-    <id>http://example.com/2020/11/22/studyone/</id>
+    <link href="http://example.com/2020/11/22/linuxone/"/>
+    <id>http://example.com/2020/11/22/linuxone/</id>
     <published>2020-11-22T10:34:00.000Z</published>
     <updated>2021-01-18T14:14:20.330Z</updated>
     
