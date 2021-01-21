@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-21T03:27:32.858Z</updated>
+  <updated>2021-01-21T05:31:03.273Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>datetime和timestamp区别</title>
+    <link href="http://example.com/2021/01/21/datetime/"/>
+    <id>http://example.com/2021/01/21/datetime/</id>
+    <published>2021-01-21T04:58:00.000Z</published>
+    <updated>2021-01-21T05:31:03.273Z</updated>
+    
+    <content type="html"><![CDATA[<p>MySQL 中常用的两种时间储存类型分别是datetime和 timestamp。如何在它们之间选择是建表时必要的考虑。下面就谈谈他们的区别和怎么选择。</p><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><h3 id="占用空间"><a href="#占用空间" class="headerlink" title="占用空间"></a>占用空间</h3><p><img src="/img/datetime/1.jpg" alt="avatar"></p><h3 id="表示范围"><a href="#表示范围" class="headerlink" title="表示范围"></a>表示范围</h3><p><img src="/img/datetime/2.jpg" alt="avatar"><br>timestamp翻译为汉语即”时间戳”，它是当前时间到 Unix元年(1970 年 1 月 1 日 0 时 0 分 0 秒)的秒数。对于某些时间的计算，如果是以 datetime 的形式会比较困难，假如我是 1994-1-20 06:06:06 出生，现在的时间是 2016-10-1 20:04:50 ，那么要计算我活了多少秒钟用 datetime 还需要函数进行转换，但是 timestamp 直接相减就行。</p><h3 id="时区"><a href="#时区" class="headerlink" title="时区"></a>时区</h3><p>timestamp 只占 4 个字节，而且是以utc的格式储存， 它会自动检索当前时区并进行转换。</p><p>datetime以 8 个字节储存，不会进行时区的检索.</p><p>也就是说，对于timestamp来说，如果储存时的时区和检索时的时区不一样，那么拿出来的数据也不一样。对于datetime来说，存什么拿到的就是什么。</p><p>还有一个区别就是如果存进去的是NULL，timestamp会自动储存当前时间，而 datetime会储存 NULL。</p><h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>如果在时间上要超过Linux时间的，或者服务器时区不一样的就建议选择 timestamp。</p><p>如果是想要使用自动插入时间或者自动更新时间功能的，可以使用timestamp。</p><p>如果只是想表示年、日期、时间的还可以使用 year、 date、 time，它们分别占据 1、3、3 字节，而datetime就是它们的集合。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;MySQL 中常用的两种时间储存类型分别是datetime和 timestamp。如何在它们之间选择是建表时必要的考虑。下面就谈谈他们的区别和怎么选择。&lt;/p&gt;
+&lt;h2 id=&quot;区别&quot;&gt;&lt;a href=&quot;#区别&quot; class=&quot;headerlink&quot; title=&quot;区别&quot;&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="mysql" scheme="http://example.com/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
